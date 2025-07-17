@@ -10,6 +10,7 @@
         "bmewburn.vscode-intelephense-client",
         "bradlc.vscode-tailwindcss",
         "wayou.vscode-todo-highlight",
-        "redhat.vscode-yaml"
+        "redhat.vscode-yaml",
+        "bierner.markdown-preview-github-styles"
     ]
 }
