@@ -1,0 +1,84 @@
+{
+    "name": "4uruanna/terra",
+    "description": "Backend for the Terra project.",
+    "type": "project",
+    "license": "Apache-2.0",
+    "homepage": "https://github.com/4uruanna/terra",
+    "authors": [
+        {
+            "name": "4uruanna",
+            "email": "adrien@villalonga.software",
+            "homepage": "https://github.com/4uruanna"
+        }
+    ],
+    "keywords": [
+        "bedrock",
+        "roots",
+        "api"
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org",
+            "only": [
+                "wpackagist-plugin/*",
+                "wpackagist-theme/*"
+            ]
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "composer/installers": "^2.2",
+        "vlucas/phpdotenv": "^5.5",
+        "oscarotero/env": "^2.1",
+        "roots/bedrock-autoloader": "^1.0",
+        "roots/bedrock-disallow-indexing": "^2.0",
+        "roots/wordpress": "6.8.1",
+        "roots/wp-config": "1.0.0",
+        "wpackagist-plugin/jwt-authentication-for-wp-rest-api": "^1.3"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "laravel/pint": "^1.18",
+        "phpunit/phpunit": "^12",
+        "phpspec/prophecy": "^1.22",
+        "fakerphp/faker": "^1.24"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "composer/installers": true,
+            "roots/wordpress-core-installer": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "installer-paths": {
+            "web/app/mu-plugins/{$name}/": [
+                "type:wordpress-muplugin",
+                "wpackagist-plugin/jwt-authentication-for-wp-rest-api"
+            ],
+            "web/app/plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ],
+            "web/app/themes/{$name}/": [
+                "type:wordpress-theme"
+            ]
+        },
+        "wordpress-install-dir": "web/wp"
+    },
+    "scripts": {
+        "lint": "pint --test",
+        "lint:fix": "pint",
+        "test": "./vendor/bin/phpunit --testdox ./test/",
+        "test:debug": "./vendor/bin/phpunit --testdox --debug ./test/",
+        "dev": "php -S localhost:8100 -t ./web"
+    },
+    "autoload": {
+        "psr-4": {
+            "terra\\": "web/app/themes/terra/"
+        }
+    }
+}
