@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "aaron-bond.better-comments",
+        "devsense.composer-php-vscode",
+        "dbaeumer.vscode-eslint",
+        "oderwat.indent-rainbow",
+        "christian-kohler.npm-intellisense",
+        "christian-kohler.path-intellisense",
+        "johnpapa.vscode-peacock",
+        "bmewburn.vscode-intelephense-client",
+        "bradlc.vscode-tailwindcss",
+        "wayou.vscode-todo-highlight",
+        "redhat.vscode-yaml"
+    ]
+}
