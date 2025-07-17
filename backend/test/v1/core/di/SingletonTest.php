@@ -38,4 +38,18 @@ final class SingletonTest extends TestCase
         $this->assertSame("123", $instance->a);
         $this->assertInstanceOf(SingletonTestFoo::class, $instance->foo);
     }
+
+    public function testPreventCloningSingleton(): void
+    {
+        $instanceA = SingletonTestFoo::inject();
+        $this->expectExceptionMessage("Cannot clone singleton");
+        clone $instanceA;
+    }
+
+    public function testPreventDeserializingSingleton(): void
+    {
+        $instanceA = SingletonTestFoo::inject();
+        $this->expectExceptionMessage("Cannot unserialize singleton");
+        unserialize(serialize($instanceA));
+    }
 }

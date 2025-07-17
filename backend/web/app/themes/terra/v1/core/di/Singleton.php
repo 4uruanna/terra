@@ -2,6 +2,8 @@
 
 namespace terra\v1\core\di;
 
+use Exception;
+
 abstract class Singleton extends Dependency
 {
     public static array $instance_list = [];
@@ -16,4 +18,19 @@ abstract class Singleton extends Dependency
 
         return self::$instance_list[$class];
     }
-} 
+
+    public function __clone(): void
+    {
+        throw new Exception("Cannot clone singleton");
+    }
+
+    public function __wakeup(): void
+    {
+        throw new Exception("Cannot unserialize singleton");
+    }
+
+    public function __unserialize(array $data): void
+    {
+        throw new Exception("Cannot unserialize singleton");
+    }
+}
