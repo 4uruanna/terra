@@ -20,4 +20,6 @@
 
 #### GUIDES FOR DEVELOPERS
 
-- [Conventional commits](./documentation/conventional-commits.md)
+- [Conventional commits](./documentation/CONVENTIONAL-COMMITS.md)
+- [Testing](./documentation/TESTING.md)
+- [Linting](./documentation/LINTING.md)
