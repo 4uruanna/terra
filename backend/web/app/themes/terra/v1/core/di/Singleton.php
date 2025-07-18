@@ -2,7 +2,7 @@
 
 namespace terra\v1\core\di;
 
-use Exception;
+use terra\v1\core\error\InternalError;
 
 abstract class Singleton extends Dependency
 {
@@ -21,16 +21,16 @@ abstract class Singleton extends Dependency
 
     public function __clone(): void
     {
-        throw new Exception("Cannot clone singleton");
+        throw new InternalError("Cannot clone singleton");
     }
 
     public function __wakeup(): void
     {
-        throw new Exception("Cannot unserialize singleton");
+        throw new InternalError("Cannot unserialize singleton");
     }
 
     public function __unserialize(array $data): void
     {
-        throw new Exception("Cannot unserialize singleton");
+        throw new InternalError("Cannot unserialize singleton");
     }
 }
