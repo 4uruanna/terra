@@ -73,8 +73,8 @@
     "scripts": {
         "lint": "pint --test",
         "lint:fix": "pint",
-        "test": "./vendor/bin/phpunit --testdox ./test/",
-        "test:debug": "./vendor/bin/phpunit --testdox --debug ./test/",
+        "test": "./vendor/bin/phpunit --testdox ./test/ --bootstrap ./test/v1/bootstrap.php",
+        "test:debug": "./vendor/bin/phpunit --testdox --debug ./test/ --bootstrap ./test/v1/bootstrap.php",
         "dev": "php -S localhost:8100 -t ./web"
     },
     "autoload": {
