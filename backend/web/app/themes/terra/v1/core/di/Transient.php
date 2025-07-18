@@ -8,4 +8,4 @@ abstract class Transient extends Dependency
     {
         return parent::inject($arg_list);
     }
-} 
+}

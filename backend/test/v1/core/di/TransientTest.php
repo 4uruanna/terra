@@ -7,7 +7,8 @@ use terra\v1\core\di\Transient;
 
 class TransientTestFoo extends Transient {}
 
-class TransientTestBar extends Transient {
+class TransientTestBar extends Transient
+{
     public TransientTestFoo $foo;
     public string $a;
 

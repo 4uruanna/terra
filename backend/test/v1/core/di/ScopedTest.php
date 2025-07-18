@@ -7,7 +7,8 @@ use terra\v1\core\di\Scoped;
 
 class ScopedTestFoo extends Scoped {}
 
-class ScopedTestBar extends Scoped {
+class ScopedTestBar extends Scoped
+{
     public ScopedTestFoo $foo;
     public string $a;
 

@@ -7,7 +7,8 @@ use terra\v1\core\di\Singleton;
 
 class SingletonTestFoo extends Singleton {}
 
-class SingletonTestBar extends Singleton {
+class SingletonTestBar extends Singleton
+{
     public SingletonTestFoo $foo;
     public string $a;
 

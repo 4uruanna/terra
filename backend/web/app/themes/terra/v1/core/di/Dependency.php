@@ -11,24 +11,24 @@ abstract class Dependency
         $contrustor_arg_list = [];
         $class = new ReflectionClass(get_called_class());
         $constructor = $class->getConstructor();
-        if($constructor !== null) {
+        if ($constructor !== null) {
             $parameter_list = $constructor->getParameters();
-    
+
             foreach ($parameter_list as $parameter) {
                 if ($parameter->hasType()) {
                     $parameter_name = $parameter->getName();
                     $parameter_type = $parameter->getType();
                     $parameter_type_name = $parameter_type->getName();
-    
-                    if(isset($arg_list[$parameter_name])) {
+
+                    if (isset($arg_list[$parameter_name])) {
                         $contrustor_arg_list[] = $arg_list[$parameter_name];
                         continue;
                     }
-    
-                    if(!$parameter->isOptional() && !$parameter_type->isBuiltin()) {
+
+                    if (!$parameter->isOptional() && !$parameter_type->isBuiltin()) {
                         $parameter_class = new ReflectionClass($parameter_type_name);
-    
-                        if($parameter_class->isSubclassOf(Dependency::class)) {
+
+                        if ($parameter_class->isSubclassOf(Dependency::class)) {
                             $contrustor_arg_list[] = $parameter_type_name::inject($arg_list);
                         }
                     }

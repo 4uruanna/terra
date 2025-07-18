@@ -9,7 +9,7 @@ use terra\v1\core\di\Singleton;
 
 class LoggerService extends Singleton
 {
-    const LOG_FILE = __DIR__ . '/../../../../../test.log';
+    public const LOG_FILE = __DIR__ . '/../../../../../test.log';
 
     public function build(string $channel = ''): Logger
     {
@@ -24,4 +24,3 @@ class LoggerService extends Singleton
         return $logger;
     }
 }
-
