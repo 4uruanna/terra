@@ -9,8 +9,8 @@ final class LoggerServiceTest extends TestCase
 {
     public function testLog(): void
     {
-        if (file_exists(LoggerService::LOG_FILE)) {
-            unlink(LoggerService::LOG_FILE);
+        if (file_exists(TERRA_LOG_FILE)) {
+            unlink(TERRA_LOG_FILE);
         }
 
         $loggerService = LoggerService::inject();
@@ -24,8 +24,8 @@ final class LoggerServiceTest extends TestCase
         $logger->alert('ALERT');
         $logger->emergency('EMERGENCY');
 
-        $this->assertTrue(file_exists(LoggerService::LOG_FILE));
-        $content = file_get_contents(LoggerService::LOG_FILE);
+        $this->assertTrue(file_exists(TERRA_LOG_FILE));
+        $content = file_get_contents(TERRA_LOG_FILE);
         $rows = array_filter(explode("\n", $content), fn($l) => strlen($l));
         $this->assertEquals(8, count($rows));
     }

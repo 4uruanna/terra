@@ -1,5 +1,7 @@
 <?php
 
+defined('WP_ENV') or define('WP_ENV', 'test');
+
 function wp_get_environment_type()
 {
     return 'test';
