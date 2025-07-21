@@ -17,5 +17,5 @@ function wp_get_environment_type()
 
 function get_template_directory()
 {
-    return __DIR__ . '/../web/app/themes/oml';
+    return __DIR__ . '/../web/app/themes/terra';
 }
