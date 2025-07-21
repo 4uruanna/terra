@@ -1,6 +1,6 @@
 <?php
 
-namespace oml\mod\api;
+namespace terra\v1\core\abstract;
 
 use terra\v1\core\di\Singleton;
 use WP_HTTP_Response;
